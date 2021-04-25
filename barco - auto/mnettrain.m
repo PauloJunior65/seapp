@@ -1,32 +1,11 @@
 function [ network ] = mnettrain (configuracao,network,dado)
 mkdir([configuracao.save '\save']);
 file = [configuracao.save '\save\treino-'];
-clc;
-fprintf('Treino:\n\t1-Novo\n\t2-Save\n');
-switch input('opcao:')
-    case 1
-        inicio = 1;
-        network.net_train = input('(int) Número de Treino:');
-        network.net_epochs = input('(int) Número máximo de iterações de cada Treino:');
-        network.net_lr = input('Taxa de aprendizagem\n Exemplo "0.0001"\n(double):');
-        fprintf('\nResources:\n\t1-Normal\n\t2-Parallel\n\t3-Parallel e GPU\n');
-        network.resource = input('(int) opcao:');
-        %Reset
-        for i = 1:length(network.redes_aux)
-            network.redes(i).rede = {};
-            network.redes(i).rede_treino = {};
-            network.redes(i).tempo = {};
-            network.redes(i).treino = {};
-            network.redes(i).validacao = {};
-            network.redes(i).teste = {};
-            network.redes(i).all = {};
-        end
-        save([file 'dado'],'dado');
-        save([file 'network'],'inicio','network');
-    case 2
-        load([file 'dado']);
-        load([file 'network']);
-end
+inicio = 1;
+save([file 'dado'],'dado');
+save([file 'network'],'inicio','network');
+% load([file 'dado']);
+% load([file 'network']);
 clc;
 fprintf('\nTreinando as Redes Neurais: %d\n',network.net_train);
 fprintf('=================================================');

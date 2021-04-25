@@ -44,6 +44,7 @@ network.redeSelect = input('(int ou []) Opção:');
 network.net_train = 0;
 network.net_epochs = 0;
 network.net_lr = 0;
+network.resource = 0;
 network.redes_aux = {};
 %Create
 count = 1;

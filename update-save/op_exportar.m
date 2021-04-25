@@ -9,25 +9,21 @@ if isempty(index2)
     index2 = 1:length(network.redes(1).rede);
 end
 
-% fprintf('!!!plot 2d barco!!!!\n');
-% path_plus = [path,'barco2d\'];
-% mkdir(strcat(path_plus,'png'));
-% mkdir(strcat(path_plus,'fig'));
-% plot_save(path_plus,plot_2d_barco_gafun(resultado,otimizacao));
-% for i = 1:length(index2)
-%     plot_save(path_plus,plot_2d_barco_ga(index2(i),resultado,otimizacao));
-%     close all;
-% end
-% clc;
-% fprintf('!!!plot 3d barco!!!!\n');
-% path_plus = [path,'barco3d\'];
-% mkdir(strcat(path_plus,'png'));
-% mkdir(strcat(path_plus,'fig'));
-% plot_save(path_plus,plot_3d_barco_gafun(resultado,otimizacao));
-% for i = 1:length(index2)
-%     plot_save(path_plus,plot_3d_barco_ga(index2(i),resultado,otimizacao));
-%     close all;
-% end
+fprintf('!!!plot 2d barco!!!!\n');
+path_plus = [path,'barco2d\'];
+mkdir(strcat(path_plus,'png'));
+mkdir(strcat(path_plus,'fig'));
+plot_save(path_plus,plot_2d_barco_gafun(resultado,otimizacao));
+plot_save(path_plus,plot_2d_barco_ga(index2,resultado,otimizacao));
+close all;
+clc;
+fprintf('!!!plot 3d barco!!!!\n');
+path_plus = [path,'barco3d\'];
+mkdir(strcat(path_plus,'png'));
+mkdir(strcat(path_plus,'fig'));
+plot_save(path_plus,plot_3d_barco_gafun(resultado,otimizacao));
+plot_save(path_plus,plot_3d_barco_ga(index2,resultado,otimizacao));
+close all;
 
 clc;
 list = {'Nº','Nº-DB','Tipo de Rede','Algoritmo de Treinamento',...%1 2 3
@@ -85,7 +81,7 @@ for i = 1:length(index)
         ga = rede2.ga(index2(j));
         qdt = rede.rede_treino{index2(j)}.num_epochs;
         dur = rede.tempo{index2(j)};
-        list(count,:) = {sprintf('%d,TR-%d',i,j),rede.index,rede.tipo,rede.trainFcnName,rede.transferFcn,j,qdt,sprintf('%s',dur),...
+        list(count,:) = {sprintf('%d-%d',i,j),rede.index,rede.tipo,rede.trainFcnName,rede.transferFcn,j,qdt,sprintf('%s',dur),...
             treino.mse,validacao.mse,teste.mse,all.mse,...%6 7 8 9
             treino.rmse,validacao.rmse,teste.rmse,all.rmse,...%10 11 12 13
             treino.nrmse,validacao.nrmse,teste.nrmse,all.nrmse,...%14 15 16 17

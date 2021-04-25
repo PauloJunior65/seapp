@@ -13,44 +13,36 @@ fprintf('!!!plot perform!!!!\n');
 path_plus = [path,'perform\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-for j = 1:length(index2)
-    parfor i = 1:length(index)
-        h = plot_net_perform(index(i),index2(j),network);
-        plot_save(path_plus,h);
-    end
+parfor i = 1:length(index)
+    h = plot_net_perform(index(i),index2,network);
+    plot_save(path_plus,h);
 end
 clc;
 fprintf('!!!plot errhist!!!!\n');
 path_plus = [path,'errhist\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-for j = 1:length(index2)
-    parfor i = 1:length(index)
-        h=plot_net_errhist(index(i),index2(j),network,dado);
-        plot_save(path_plus,h);
-    end
+parfor i = 1:length(index)
+    h=plot_net_errhist(index(i),index2,network,dado);
+    plot_save(path_plus,h);
 end
 clc;
 fprintf('!!!plot regression!!!!\n');
 path_plus = [path,'regression\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-for j = 1:length(index2)
-    parfor i = 1:length(index)
-        h=plot_net_regression(index(i),index2(j),network,dado);
-        plot_save(path_plus,h);
-    end
+parfor i = 1:length(index)
+    h=plot_net_regression(index(i),index2,network,dado);
+    plot_save(path_plus,h);
 end
 clc;
 fprintf('!!!plot trainstate!!!!\n');
 path_plus = [path,'trainstate\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-for j = 1:length(index2)
-    parfor i = 1:length(index)
-        h=plot_net_trainstate(index(i),index2(j),network);
-        plot_save(path_plus,h);
-    end
+parfor i = 1:length(index)
+    h=plot_net_trainstate(index(i),index2,network);
+    plot_save(path_plus,h);
 end
 
 clc;

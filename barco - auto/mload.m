@@ -1,0 +1,12 @@
+clc;
+fprintf('Salvando...\n');
+load([configuracao.save '\save\configuracao']);
+fprintf('Load => configuracao\n');
+load([configuracao.save '\save\dado']);
+fprintf('Load => dado\n');
+load([configuracao.save '\save\network']);
+fprintf('Load => network\n');
+load([configuracao.save '\save\otimizacao']);
+fprintf('Load => otimizacao\n');
+load([configuracao.save '\save\resultado']);
+fprintf('Load => resultado\n');
