@@ -1,5 +1,5 @@
- clear;
- clc;
+% clear;
+clc;
 % configuracao.data = datetime;
 % configuracao.save = 'Rede';
 % mkdir(configuracao.save);
@@ -20,9 +20,9 @@
 %     'traingdx','Variable Learning Rate Gradient Descent';...
 %     'traingdm','Gradient Descent with Momentum';...
 %     'traingd','Gradient Descent'};
-% network.trainSelect = 0;
+% network.trainSelect = 1;
 % network.transferFcn = {'purelin'; 'tansig';'logsig'};
-% network.transferSelect = 0;
+% network.transferSelect = 3;
 % network.redeTipo = {'feedforwardnet'};
 % network.redeSelect = 0;
 % network.net_train = 0;
@@ -48,17 +48,17 @@
 % otimizacao.pgen = 100;
 % otimizacao.peli = 20;
 % otimizacao.tipo = 2;%1 - Maximizar | 2 - Minimizar
-% 
-% configuracao.data = datetime;
-% configuracao.save = 'Manaus-Barcelos';
-% otimizacao.distacia = 440.98/ 1.852;
-% resultado = motmexe(configuracao,dado,network,otimizacao);
-% msave;
-% path = sprintf('%s\\',configuracao.save);
-% op_exportar(index,[],configuracao,resultado,dado,network,otimizacao,path);
-% path = sprintf('%s\\barco\\',configuracao.save);
-% op_exportar_barco(dado,otimizacao,path);
-% 
+
+configuracao.data = datetime;
+configuracao.save = 'Manaus-Barcelos';
+otimizacao.distacia = 440.98/ 1.852;
+resultado = motmexe(configuracao,dado,network,otimizacao);
+msave;
+path = sprintf('%s\\',configuracao.save);
+op_exportar(index,[],configuracao,resultado,dado,network,otimizacao,path);
+path = sprintf('%s\\barco\\',configuracao.save);
+op_exportar_barco(dado,otimizacao,path);
+
 % configuracao.data = datetime;
 % configuracao.save = 'Manaus-Itacoatiara';
 % otimizacao.distacia = 195.3/ 1.852;
@@ -78,8 +78,9 @@
 % op_exportar(index,[],configuracao,resultado,dado,network,otimizacao,path);
 % path = sprintf('%s\\barco\\',configuracao.save);
 % op_exportar_barco(dado,otimizacao,path);
-configuracao.save = 'Manaus-Itacoatiara2';
-mload;
-path = sprintf('%s\\',configuracao.save);
-index = net_select(network,4);%Listar por: 1 - TREINO |2 - VALIDAÇÃO |3 - TESTE |4 - ALL');
-op_exportar(index,[],configuracao,resultado,dado,network,otimizacao,path);
+% 
+% configuracao.save = 'Manaus-Itacoatiara2';
+% mload;
+% path = sprintf('%s\\',configuracao.save);
+% index = net_select(network,4);%Listar por: 1 - TREINO |2 - VALIDAÇÃO |3 - TESTE |4 - ALL');
+% op_exportar(index,[],configuracao,resultado,dado,network,otimizacao,path);

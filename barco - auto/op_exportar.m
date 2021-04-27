@@ -9,25 +9,25 @@ if isempty(index2)
     index2 = 1:length(network.redes(1).rede);
 end
 
-% fprintf('!!!plot 2d barco!!!!\n');
-% path_plus = [path,'barco2d\'];
-% mkdir(strcat(path_plus,'png'));
-% mkdir(strcat(path_plus,'fig'));
-% plot_save(path_plus,plot_2d_barco_gafun(resultado,otimizacao));
-% for i = 1:length(index2)
-%     plot_save(path_plus,plot_2d_barco_ga(index2(i),resultado,otimizacao));
-%     close all;
-% end
-% clc;
-% fprintf('!!!plot 3d barco!!!!\n');
-% path_plus = [path,'barco3d\'];
-% mkdir(strcat(path_plus,'png'));
-% mkdir(strcat(path_plus,'fig'));
-% plot_save(path_plus,plot_3d_barco_gafun(resultado,otimizacao));
-% for i = 1:length(index2)
-%     plot_save(path_plus,plot_3d_barco_ga(index2(i),resultado,otimizacao));
-%     close all;
-% end
+fprintf('!!!plot 2d barco!!!!\n');
+path_plus = [path,'barco2d\'];
+mkdir(strcat(path_plus,'png'));
+mkdir(strcat(path_plus,'fig'));
+plot_save(path_plus,plot_2d_barco_gafun(resultado,otimizacao));
+for i = 1:length(index2)
+    plot_save(path_plus,plot_2d_barco_ga(index2(i),resultado,otimizacao));
+    close all;
+end
+clc;
+fprintf('!!!plot 3d barco!!!!\n');
+path_plus = [path,'barco3d\'];
+mkdir(strcat(path_plus,'png'));
+mkdir(strcat(path_plus,'fig'));
+plot_save(path_plus,plot_3d_barco_gafun(resultado,otimizacao));
+for i = 1:length(index2)
+    plot_save(path_plus,plot_3d_barco_ga(index2(i),resultado,otimizacao));
+    close all;
+end
 
 clc;
 list = {'Nº','Nº-DB','Tipo de Rede','Algoritmo de Treinamento',...%1 2 3
