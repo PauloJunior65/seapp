@@ -19,7 +19,7 @@ for i = inicio2:length(network.redes_aux)
     dur = duration;
     for j = 1:network.net_train
         fprintf('%d,',j);
-        tempo = datetime('now','TimeZone','local','Format','dd HH:mm:ss');
+        tempo = datetime;
         switch network.resource
             case 3
                 [net,tr] = train(net,dado.input,dado.target,'useParallel','yes','useGPU','yes');
@@ -28,7 +28,7 @@ for i = inicio2:length(network.redes_aux)
             otherwise
                 [net,tr] = train(net,dado.input,dado.target);
         end
-        network.redes(i).tempo{j} = datetime('now','TimeZone','local','Format','dd HH:mm:ss') - tempo;
+        network.redes(i).tempo{j} = datetime - tempo;
         dur = dur+network.redes(i).tempo{j};
         network.redes(i).rede{j} = net;
         network.redes(i).rede_treino{j} = tr;

@@ -1,10 +1,12 @@
-% clear;
+parfor i = 1:1
+end
+%clear;
 clc;
 % configuracao.data = datetime;
 % configuracao.save = 'Rede';
 % mkdir(configuracao.save);
 % configuracao.file = 'dado/dados';
-% mrandom(configuracao.file,10000);
+% mrandom(configuracao.file,1000);
 % dado = mgenerate(configuracao);
 % network.net_camada = 2;
 % network.net_neuronio = [50 40];
@@ -31,8 +33,8 @@ clc;
 % network.redes_aux = {};
 % network = mnetcreate(network,dado);
 % network.net_train = 1;
-% network.net_epochs = 1000;
-% network.net_lr = 0.00001;
+% network.net_epochs = 10;
+% network.net_lr = 1e-6;
 % network.resource = 3;%Resources: 1-Normal |2-Parallel |3-Parallel e GPU
 % network = mnettrain(configuracao,network,dado);
 % otimizacao = [];
@@ -43,11 +45,12 @@ clc;
 % path = sprintf('%s\\',configuracao.save);
 % op_exportar_net(index,[],network,dado,path);
 % 
-% otimizacao = motmcreate(dado);
-% otimizacao.psize = 50;
-% otimizacao.pgen = 100;
-% otimizacao.peli = 20;
-% otimizacao.tipo = 2;%1 - Maximizar | 2 - Minimizar
+otimizacao = motmcreate(dado);
+otimizacao.psize = 50;
+otimizacao.pgen = 100;
+otimizacao.peli = 20;
+otimizacao.tipo = 2;%1 - Maximizar | 2 - Minimizar
+otimizacao.parallel = true;
 
 configuracao.data = datetime;
 configuracao.save = 'Manaus-Barcelos';
