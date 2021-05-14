@@ -1,4 +1,4 @@
-function h = plot_3d_barco_gafun(resultado,otimizacao)
+function h = plot_3d_barco_fun(resultado,otimizacao)
 h = {};
 h{1} = figure;
 mesh(resultado.plot.value3dX,resultado.plot.value3dY,resultado.plot.value3dZ);

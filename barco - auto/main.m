@@ -41,7 +41,7 @@ clc;
 % resultado = [];
 % msave;
 % mload;
-% index = net_select(network,4);%Listar por: 1 - TREINO |2 - VALIDAÇÃO |3 - TESTE |4 - ALL');
+ index = net_select(network,4);%Listar por: 1 - TREINO |2 - VALIDAÇÃO |3 - TESTE |4 - ALL');
 % path = sprintf('%s\\',configuracao.save);
 % op_exportar_net(index,[],network,dado,path);
 % 

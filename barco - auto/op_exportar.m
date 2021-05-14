@@ -13,19 +13,20 @@ fprintf('!!!plot 2d barco!!!!\n');
 path_plus = [path,'barco2d\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-plot_save(path_plus,plot_2d_barco_gafun(resultado,otimizacao));
+plot_save(path_plus,plot_2d_barco_fun(resultado,otimizacao));
 for i = 1:length(index2)
-    plot_save(path_plus,plot_2d_barco_ga(index2(i),resultado,otimizacao));
+    plot_save(path_plus,plot_2d_barco(index2(i),network,resultado,otimizacao));
     close all;
 end
+
 clc;
 fprintf('!!!plot 3d barco!!!!\n');
 path_plus = [path,'barco3d\'];
 mkdir(strcat(path_plus,'png'));
 mkdir(strcat(path_plus,'fig'));
-plot_save(path_plus,plot_3d_barco_gafun(resultado,otimizacao));
+plot_save(path_plus,plot_3d_barco_fun(resultado,otimizacao));
 for i = 1:length(index2)
-    plot_save(path_plus,plot_3d_barco_ga(index2(i),resultado,otimizacao));
+    plot_save(path_plus,plot_3d_barco(index2(i),network,resultado,otimizacao));
     close all;
 end
 
