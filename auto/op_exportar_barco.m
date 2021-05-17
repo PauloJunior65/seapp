@@ -1,6 +1,6 @@
 function op_exportar_barco(index,index2,configuracao,resultado,dado,network,otimizacao)
 clc;
-path = sprintf('%s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
+path = sprintf('R %s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
 path = [configuracao.save,'\',path,'\'];
 mkdir(path);
 

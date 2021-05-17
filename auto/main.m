@@ -4,42 +4,42 @@ clear;
 clc;
 configuracao.data = datetime;
 configuracao.save = 'Rede';
-mkdir(configuracao.save);
-configuracao.file = 'dado/dados';
-mrandom(configuracao.file,1000);
-dado = mgenerate(configuracao);
-network.net_camada = 2;
-network.net_neuronio = [50 40];
-network.trainFcn = {'trainlm', 'Levenberg-Marquardt';...
-    'trainbr','Regularização Bayesiana';...
-    'trainbfg','BFGS Quasi-Newton';...
-    'trainrp','Resilient Backpropagation';...
-    'trainscg','Scaled Conjugate Gradient';...
-    'traincgb','Conjugate Gradient with Powell/Beale Restarts';...
-    'traincgf','Fletcher-Powell Conjugate Gradient';...
-    'traincgp','Polak-Ribiére Conjugate Gradient';...
-    'trainoss','One Step Secant';...
-    'traingdx','Variable Learning Rate Gradient Descent';...
-    'traingdm','Gradient Descent with Momentum';...
-    'traingd','Gradient Descent'};
-network.trainSelect = 0;
-network.transferFcn = {'purelin'; 'tansig';'logsig'};
-network.transferSelect = 0;
-network.redeTipo = {'feedforwardnet'};
-network.redeSelect = 0;
-network.net_train = 0;
-network.net_epochs = 0;
-network.net_lr = 0;
-network.redes_aux = {};
-network = mnetcreate(network,dado);
-network.net_train = 1;
-network.net_epochs = 1000;
-network.net_lr = 1e-6;
-network.resource = 3;%Resources: 1-Normal |2-Parallel |3-Parallel e GPU
-network = mnettrain(configuracao,network,dado);
-otimizacao = [];
-resultado = [];
-msave;
+% mkdir(configuracao.save);
+% configuracao.file = 'dado/dados';
+% mrandom(configuracao.file,1000);
+% dado = mgenerate(configuracao);
+% network.net_camada = 2;
+% network.net_neuronio = [50 40];
+% network.trainFcn = {'trainlm', 'Levenberg-Marquardt';...
+%     'trainbr','Regularização Bayesiana';...
+%     'trainbfg','BFGS Quasi-Newton';...
+%     'trainrp','Resilient Backpropagation';...
+%     'trainscg','Scaled Conjugate Gradient';...
+%     'traincgb','Conjugate Gradient with Powell/Beale Restarts';...
+%     'traincgf','Fletcher-Powell Conjugate Gradient';...
+%     'traincgp','Polak-Ribiére Conjugate Gradient';...
+%     'trainoss','One Step Secant';...
+%     'traingdx','Variable Learning Rate Gradient Descent';...
+%     'traingdm','Gradient Descent with Momentum';...
+%     'traingd','Gradient Descent'};
+% network.trainSelect = 0;
+% network.transferFcn = {'purelin'; 'tansig';'logsig'};
+% network.transferSelect = 0;
+% network.redeTipo = {'feedforwardnet'};
+% network.redeSelect = 0;
+% network.net_train = 0;
+% network.net_epochs = 0;
+% network.net_lr = 0;
+% network.redes_aux = {};
+% network = mnetcreate(network,dado);
+% network.net_train = 1;
+% network.net_epochs = 1000;
+% network.net_lr = 1e-6;
+% network.resource = 3;%Resources: 1-Normal |2-Parallel |3-Parallel e GPU
+% network = mnettrain(configuracao,network,dado);
+% otimizacao = [];
+% resultado = [];
+% msave;
 mload;
 index = net_select(network,4);%Listar por: 1 - TREINO |2 - VALIDAÇÃO |3 - TESTE |4 - ALL');
 op_exportar_net(index,[],network,dado,configuracao);

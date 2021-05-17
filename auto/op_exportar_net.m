@@ -1,6 +1,6 @@
 function op_exportar_net(index,index2,network,dado,configuracao)
 clc;
-path = sprintf('%s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
+path = sprintf('NET %s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
 path = [configuracao.save,'\',path,'\'];
 mkdir(path);
 
@@ -172,6 +172,7 @@ for i = 1:size(dado.targetVal,1)
     list(end+1,:) = ['target',dado.targetVal(i,:)];
     list2{1,end+1} = dado.targetVal{i,2};
 end
+list2 = [list2;num2cell(dado.target')];
 xlswrite([path,'Dados - Target.xlsx'],list2);
 xlswrite([path,'Dados - Desc.xlsx'],list);
 

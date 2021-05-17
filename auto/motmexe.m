@@ -1,13 +1,14 @@
 function resultado = motmexe(configuracao,dado,network,otimizacao)
 
 clc;
-path = [configuracao.save '\ga'];
+pasta = sprintf('OTM %s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
+path = [configuracao.save,'\',pasta,'\ga'];
 mkdir([path,'\fig']);
 mkdir([path,'\png']);
-path2 = [configuracao.save '\particleswarm'];
+path2 = [configuracao.save,'\',pasta,'\pso'];
 mkdir([path2,'\fig']);
 mkdir([path2,'\png']);
-path3 = [configuracao.save '\sa'];
+path3 = [configuracao.save,'\',pasta,'\sa'];
 mkdir([path3,'\fig']);
 mkdir([path3,'\png']);
 
