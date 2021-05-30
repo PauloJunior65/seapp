@@ -1,7 +1,7 @@
 function mrandom(nome,qdt)
 file = fullfile(strcat(nome,'.xlsx'));
 delete(file);
-dado = {'Nautical Mile','Quilometro','KM/H','Hora','Consumo em litro'};
+dado = {'Distancia (NM)','Distancia (KM)','Velocidade (KM/H)','Tempo (H)','Consumo (L)'};
 barco = mbarco();
 
 data = {800,800,2100,2100;...

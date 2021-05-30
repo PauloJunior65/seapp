@@ -1,6 +1,6 @@
 function h = plot_3d_barco( index,treino,network,resultado,otimizacao)
 h ={};
-for i = 1:length(index)
+for i = 1:length(resultado.redes)
     for j = 1:length(treino)
         index2 = index(i);
         rede = resultado.redes(index2);

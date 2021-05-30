@@ -1,7 +1,7 @@
 function op_exportar_net(index,index2,network,dado,configuracao)
 clc;
-path = sprintf('%s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
-path = [configuracao.save,'\',path];
+path = sprintf('NET %s',datetime('now','Format','yyyy-MM-dd-HH-mm-ss'));
+path = [configuracao.save,'\',path,'\'];
 mkdir(path);
 
 if isempty(index)
@@ -69,7 +69,6 @@ list = {'Nº','Tipo de Rede','Algoritmo de Treinamento',...%1 2 3
     'Treino REGRESSION','Validacao REGRESSION','Teste REGRESSION','All REGRESSION'};% 24 25 26 27
 for i = 1:length(index)
     rede = network.redes(index(i));
-    rede2 = resultado.redes(index(i));
     treino = rede.treino{end};
     validacao = rede.validacao{end};
     teste = rede.teste{end};
@@ -106,7 +105,6 @@ list = {'Nº','Tipo de Rede','Algoritmo de Treinamento',...%1 2 3
 for i = 1:length(index)
     for j = 1:length(index2)
         rede = network.redes(index(i));
-        rede2 = resultado.redes(index(i));
         treino = rede.treino{index2(j)};
         validacao = rede.validacao{index2(j)};
         teste = rede.teste{index2(j)};
@@ -174,6 +172,7 @@ for i = 1:size(dado.targetVal,1)
     list(end+1,:) = ['target',dado.targetVal(i,:)];
     list2{1,end+1} = dado.targetVal{i,2};
 end
+list2 = [list2;num2cell(dado.target')];
 xlswrite([path,'Dados - Target.xlsx'],list2);
 xlswrite([path,'Dados - Desc.xlsx'],list);
 

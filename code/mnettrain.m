@@ -33,6 +33,10 @@ clc;
 fprintf('\nTreinando as Redes Neurais: %d\n',network.net_train);
 fprintf('=================================================');
 %Treino
+if network.resource > 1
+    parfor i = 1:1
+    end
+end
 inicio2 = inicio;
 for i = inicio2:length(network.redes_aux)
     net = network.redes_aux{i};
