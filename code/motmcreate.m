@@ -22,7 +22,7 @@ if dado.tipo
     otimizacao.x0 = dado.inputVal{2,3};%Startingpoint
     otimizacao.lb = dado.inputVal{2,3};%Limite Inferior
     otimizacao.ub = dado.inputVal{2,4};%Limite Superior
-    fprintf('\nDistacia:\n');
+    fprintf('\nDistancia:\n');
     fprintf('\t1 - Nautical Mile\n');
     fprintf('\t2 - Quilometro\n');
     switch input('(int) opcao:')

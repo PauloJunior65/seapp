@@ -5,7 +5,7 @@ clc;
 configuracao.data = datetime;
 configuracao.save = 'Rede';
 % mkdir(configuracao.save);
-% configuracao.file = 'dado/dados';
+% configuracao.file = 'DATABASE/dados';
 % mrandom(configuracao.file,1000);
 % dado = mgenerate(configuracao);
 % network.net_camada = 2;
