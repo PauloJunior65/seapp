@@ -33,6 +33,7 @@ for i = 1:length(index)
             'MarkerEdgeColor','b',...
             'MarkerFaceColor','b');
         hold off
+        grid on;
         title(sprintf('Otimização da Rede Neural\n(ID: %d;TR-N: %d; TR: %s; FA: %s)',...
             rede.index,t,rede2.trainFcnName,rede2.transferFcn));
         xlabel('Velocidade (KM/H)');

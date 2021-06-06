@@ -1,9 +1,9 @@
 function [ network ] = mnettrain (configuracao,network,dado)
-mkdir([configuracao.save '\save']);
-file = [configuracao.save '\save\treino-'];
+% mkdir([configuracao.save '\save']);
+% file = [configuracao.save '\save\treino-'];
 inicio = 1;
-save([file 'dado'],'dado');
-save([file 'network'],'inicio','network');
+% save([file 'dado'],'dado');
+% save([file 'network'],'inicio','network');
 % load([file 'dado']);
 % load([file 'network']);
 clc;
@@ -55,9 +55,9 @@ for i = inicio2:length(network.redes_aux)
     fprintf('-------------------------------------------------\n');
     network.redes_aux{i} = net;
     inicio = i+1;
-    save([file 'network'],'inicio','network');
+%     save([file 'network'],'inicio','network');
 end
-delete([file 'dado.mat']);
-delete([file 'network.mat']);
+% delete([file 'dado.mat']);
+% delete([file 'network.mat']);
 nntraintool('close');
 end

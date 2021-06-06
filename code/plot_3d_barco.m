@@ -13,6 +13,7 @@ for i = 1:length(resultado.redes)
         
         h{end+1} = figure;
         mesh(resultado.plot.value3dX,resultado.plot.value3dY,z);
+        grid on;
         title(sprintf('Saida da Rede Neural\n(N-%d; TRN-%d; TR-%s; FA-%s)',...
             rede.index,t,rede2.trainFcnName,rede2.transferFcn));
         xlabel('Distancia (NM)');
@@ -41,6 +42,7 @@ for i = 1:length(resultado.redes)
             'MarkerSize',10,...
             'MarkerEdgeColor','b');
         hold off
+        grid on;
         legend({sprintf('Saída da Rede Neural')
             sprintf('GA (D: %0.2f nm; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,ga.x,ga.fval)
             sprintf('PSO (D: %0.2f nm; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,swarm.x,swarm.fval)

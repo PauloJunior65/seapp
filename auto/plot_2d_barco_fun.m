@@ -22,6 +22,7 @@ plot(resultado.sa.x,resultado.sa.fval,...
     'MarkerEdgeColor','b',...
     'MarkerFaceColor','b');
 hold off
+grid on;
 title(sprintf('Otimização na Função'));
 xlabel('Velocidade (KM/H)');
 ylabel('Consumo (L)');
