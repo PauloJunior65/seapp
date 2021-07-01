@@ -36,9 +36,9 @@ for i = 1:length(index)
         grid on;
         title(sprintf('Otimização da Rede Neural\n(ID: %d;TR-N: %d; TR: %s; FA: %s)',...
             rede.index,t,rede2.trainFcnName,rede2.transferFcn));
-        xlabel('Velocidade (KM/H)');
+        xlabel('Velocidade (km/h)');
         ylabel('Consumo (L)');
-        legend({sprintf('Saída (D: %0.2f nm)',otimizacao.distacia)
+        legend({sprintf('Saída (D: %0.2f nmi)',otimizacao.distacia)
             sprintf('GA (V: %0.2f km/h; C: %0.2f L)',ga.x,ga.fval)
             sprintf('PSO (V: %0.2f km/h; C: %0.2f L)',swarm.x,swarm.fval)
             sprintf('SA (V: %0.2f km/h; C: %0.2f L)',sa.x,sa.fval)});

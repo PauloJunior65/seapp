@@ -24,9 +24,9 @@ plot(resultado.sa.x,resultado.sa.fval,...
 hold off
 grid on;
 title(sprintf('Otimização na Função'));
-xlabel('Velocidade (KM/H)');
+xlabel('Velocidade (km/h)');
 ylabel('Consumo (L)');
-legend({sprintf('Saída (D: %0.2f nm)',otimizacao.distacia)
+legend({sprintf('Saída (D: %0.2f nmi)',otimizacao.distacia)
     sprintf('GA (V: %0.2f km/h; C: %0.2f L)',resultado.ga.x,resultado.ga.fval)
     sprintf('PSO (V: %0.2f km/h; C: %0.2f L)',resultado.swarm.x,resultado.swarm.fval)
     sprintf('SA (V: %0.2f km/h; C: %0.2f L)',resultado.sa.x,resultado.sa.fval)});

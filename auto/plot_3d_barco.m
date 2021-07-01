@@ -16,8 +16,8 @@ for i = 1:length(resultado.redes)
         grid on;
         title(sprintf('Saida da Rede Neural\n(N-%d; TRN-%d; TR-%s; FA-%s)',...
             rede.index,t,rede2.trainFcnName,rede2.transferFcn));
-        xlabel('Distancia (NM)');
-        ylabel('Velocidade (KM/H)');
+        xlabel('Distancia (nmi)');
+        ylabel('Velocidade (km/h)');
         zlabel('Consumo (L)');
         h{end}.Name = sprintf('N-%d; TRN-%d; TR-%s; FA-%s; Plot 3d',...
             rede.index,t,rede2.trainFcn,rede2.transferFcn);
@@ -44,13 +44,13 @@ for i = 1:length(resultado.redes)
         hold off
         grid on;
         legend({sprintf('Saída da Rede Neural')
-            sprintf('GA (D: %0.2f nm; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,ga.x,ga.fval)
-            sprintf('PSO (D: %0.2f nm; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,swarm.x,swarm.fval)
-            sprintf('SA (D: %0.2f nm; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,sa.x,sa.fval)});
+            sprintf('GA (D: %0.2f nmi; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,ga.x,ga.fval)
+            sprintf('PSO (D: %0.2f nmi; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,swarm.x,swarm.fval)
+            sprintf('SA (D: %0.2f nmi; V: %0.2f km/h; C: %0.2f L)',otimizacao.distacia,sa.x,sa.fval)});
         title(sprintf('Saida da Rede Neural\n(N-%d; TRN-%d; TR-%s; FA-%s)',...
             rede.index,t,rede2.trainFcnName,rede2.transferFcn));
-        xlabel('Distancia (NM)');
-        ylabel('Velocidade (KM/H)');
+        xlabel('Distancia (nmi)');
+        ylabel('Velocidade (km/h)');
         zlabel('Consumo (L)');
         view(3);
         h{end}.Name = sprintf('N-%d; TRN-%d; TR-%s; FA-%s; Plot 3d Comp',...
